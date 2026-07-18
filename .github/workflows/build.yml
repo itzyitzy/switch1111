@@ -10,10 +10,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout
+    - uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
 
@@ -24,7 +24,7 @@ jobs:
       run: npm run dist
 
     - name: Upload artifacts
-      uses: actions/upload-artifact
+      uses: actions/upload-artifact@v4
       with:
         name: GDUT展厅切换系统
         path: dist/*.exe
