@@ -7,16 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node
       with:
         node-version: '20'
-        cache: 'npm'
 
     - name: Install dependencies
       run: npm install
@@ -25,8 +24,7 @@ jobs:
       run: npm run dist
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact
       with:
         name: GDUT展厅切换系统
         path: dist/*.exe
-        retention-days: 30
